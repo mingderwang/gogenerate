@@ -4,6 +4,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/davecgh/go-spew/spew"
 )
 
 // @joiner
@@ -21,5 +22,9 @@ func main() {
 		Person{"Marge", "Simpson", "blue"},
 		Person{"Mr", "Burns", "gray"},
 	}
-	fmt.Printf("My favorite Simpsons Characters:\n%s\n", JoinPerson(people).With("\n"))
+
+	joined_people := JoinPerson(people).With("\n")
+	fmt.Printf("My favorite Simpsons Characters:\n%s\n", joined_people)
+	spew.Dump(people)
+	spew.Dump(joined_people)
 }
